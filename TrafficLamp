@@ -1,0 +1,20 @@
+
+#include <iostream>
+using namespace std;
+
+string colorAtTime(int t) {
+    int G=20, Y=3, R=80, C=103;
+    int offset = 25; 
+    int rel = ( (t - offset) % C + C ) % C; 
+
+    if(rel < G) return "Hijau";
+    else if(rel < G+Y) return "Kuning";
+    else return "Merah";
+}
+
+int main() {
+    int arr[4] = {80,135,150,212};
+    for(int i=0;i<4;i++) {
+        cout << "Detik " << arr[i] << " -> " << colorAtTime(arr[i]) << endl;
+    }
+}
